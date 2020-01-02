@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
@@ -29,30 +28,16 @@ public final class Sorting {
 	}
 
 	public boolean isSorted(int[] a) {
-		int[] b = new int[a.length];
-		for(int i = 0;i<a.length;++i)
-		{
-			b[i] = a[i];
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] > a[i + 1]) {
+				return false;
+			}
 		}
-		Arrays.sort(b);
-		boolean bo = true;
-		for(int i = 0;i<b.length;++i)
-		{
-			if(b[i] != a[i])
-				bo = false;
-		}
-		return bo;
-//		for (int i = 0; i < a.length; i++) {
-//			if (a[i] > a[i + 1]) {
-//				return false;
-//			}
-//		}
-//		return true;
+		return true;
 	}
 
 	public static void quicksort(int[] a) {
-		Arrays.sort(a);
-//		quicksort(a, 0, a.length - 1);
+		quicksort(a, 0, a.length - 1);
 	}
 
 	private static final int CUTOFF = 10;
